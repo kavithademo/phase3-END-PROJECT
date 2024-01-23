@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "483f5a2b-716c-46e4-8eb0-3e4ea2502cd9",
+		"name": "Postman Assignment_005",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32359228"
+	},
+	"item": [
+		{
+			"name": "Get logout request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Validate response code\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate code is 200\", function () {\r",
+							"    pm.expect(pm.response.json().code).to.eql(200);\r",
+							"});\r",
+							"pm.test(\"Validate message is OK\", function () {\r",
+							"    pm.expect(pm.response.json().message).to.eql(\"ok\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/logout",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
